@@ -6,7 +6,7 @@
   ],
   "idf.portWin": "COM3",
   "idf.flashBaudRate": "460800",
-  "idf.flashType": "UART",
+  "idf.flashType": "JTAG",
   "files.associations": {
     ".fantomasignore": "ignore",
     "*.yaml": "home-assistant",
