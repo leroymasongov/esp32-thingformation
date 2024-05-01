@@ -1,6 +1,6 @@
-2024-05-01 10:42:18,147 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STARTED
-2024-05-01 10:42:18,154 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_READY2CONNECT
-2024-05-01 10:42:23,439 - Debug Adapter (main) - ERROR - Failed to wait for completion of command "-file-exec-and-symbols d:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/blink.elf" / 5!
+2024-05-01 10:43:23,390 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STARTED
+2024-05-01 10:43:23,409 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_READY2CONNECT
+2024-05-01 10:43:28,707 - Debug Adapter (main) - ERROR - Failed to wait for completion of command "-file-exec-and-symbols d:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/blink.elf" / 5!
 Traceback (most recent call last):
   File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\command_processor.py", line 52, in __call__
     on_request(protocol_message)
@@ -22,4 +22,4 @@ Traceback (most recent call last):
   File "D:\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\esp_debug_backend\gdb.py", line 206, in _mi_cmd_run
     raise DebuggerTargetStateTimeoutError(
 esp_debug_backend.defs.DebuggerTargetStateTimeoutError: Failed to wait for completion of command "-file-exec-and-symbols d:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/blink.elf" / 5!
-2024-05-01 10:42:23,448 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STOPPED
+2024-05-01 10:43:28,709 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STOPPED

@@ -10,12 +10,6 @@
       "mode": "auto",
       "verifyAppBinBeforeDebug": false,
       "tmoScaleFactor": 1,
-      "initGdbCommands": [
-        "target extended-remote localhost:3333",
-        "mon reset halt",
-        "flushregs",
-        "thb app_main"
-      ],
       "env": {
         "CUSTOM_ENV_VAR": "SOME_VALUE"
       }
