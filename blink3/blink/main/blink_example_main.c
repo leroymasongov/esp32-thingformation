@@ -80,7 +80,7 @@ static void blink_led(void)
         
         int cr, cb, cg;
 
-        cr = randcol();
+        cr = randcol()-50;
         cb = abs(randcol()-100);
         cg = abs(randcol()-70);
             
@@ -155,6 +155,6 @@ void app_main(void)
         blink_led();
         /* Toggle the LED state */
         s_led_state = !s_led_state;
-        vTaskDelay(1700 / portTICK_PERIOD_MS);
+        vTaskDelay(650 / portTICK_PERIOD_MS);
     }
 }

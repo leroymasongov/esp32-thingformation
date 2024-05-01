@@ -3,8 +3,23 @@
   "configurations": [
     {
       "type": "espidf",
-      "name": "Launch",
-      "request": "launch"
+      "name": "Launch blink debug",
+      "request": "launch",
+      "debugPort": 49200,
+      "logLevel": 2,
+      "mode": "auto",
+      "verifyAppBinBeforeDebug": false,
+      "tmoScaleFactor": 1,
+      "initGdbCommands": [
+        "target extended-remote localhost:3333",
+        "symbol-file \\build\\blink.elf",
+        "mon reset halt",
+        "flushregs",
+        "thb app_main"
+      ],
+      "env": {
+        "CUSTOM_ENV_VAR": "SOME_VALUE"
+      }
     }
   ]
 }
