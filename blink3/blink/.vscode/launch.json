@@ -5,11 +5,11 @@
       "type": "espidf",
       "name": "Launch blink debug",
       "request": "launch",
-      "debugPort": 49200,
-      "logLevel": 2,
+      "debugPort": 43474,
+      "logLevel": 3,
       "mode": "auto",
       "verifyAppBinBeforeDebug": false,
-      "tmoScaleFactor": 1,
+      "tmoScaleFactor": 5,
       "env": {
         "CUSTOM_ENV_VAR": "SOME_VALUE"
       }

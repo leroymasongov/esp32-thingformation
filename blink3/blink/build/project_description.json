@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "blink",
-    "project_version":    "8b6897b-dirty",
+    "project_version":    "7dd94cb-dirty",
     "project_path":       "D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink",
     "idf_path":           "D:/ESP-IDF-Container/v5.2.1/esp-idf",
     "build_dir":          "D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build",
