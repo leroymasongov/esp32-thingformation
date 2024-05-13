@@ -1,7 +1,7 @@
 {
   "C_Cpp.intelliSenseEngine": "default",
-  "idf.portWin": "COM3",
-  "idf.flashType": "JTAG",
+  "idf.portWin": "COM4",
+  "idf.flashType": "UART",
   "files.associations": {
     ".fantomasignore": "ignore",
     "*.yaml": "home-assistant",

@@ -12,7 +12,7 @@
 #include <string.h>
 
 //#include <sys/time.h>
-#include "time.h"
+#include <time.h>
 
 
 #include "freertos/FreeRTOS.h"
@@ -153,8 +153,8 @@ const char* ntpServer = "pool.ntp.org";
 const long gmtOffset_sec = 36000;
 const int daylightOffset_sec = 3600;
 
-static clockid_t clock1;
-static struct timespec timespec1;
+// static clockid_t clock1;
+// static struct timespec timespec1;
 
 bool saferGetLocalTime() {
     
@@ -162,8 +162,14 @@ bool saferGetLocalTime() {
 
     //if (!getLocaTime(&timeinfo))
    // int clock_gettime(clockid_t clock_id, struct timespec *tp);
-    int nret = clock_gettime(clock1, &timespec1);
-    ESP_LOGI(TAG, "nret from clock_gettime = %d",nret);
+    // int nret = clock_gettime(clock1, &timespec1);
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    // ESP_LOGI(TAG, "nret from clock_gettime = %d",nret);
+
+    ESP_LOGI(TAG, "now DoW %d", tm.tm_mday);
+           
     // {
     //      ESP_LOGI("Failed to obtain time %s"," ");
     //      return false;
@@ -287,7 +293,7 @@ int wifi_init_sta(void)
 
 int getDayOfWeek(void)
 {
-        int nDow = 3;
+        int nDow = 4;
 
         ESP_LOGI(TAG, "Day of week %d", nDow);
         return nDow;

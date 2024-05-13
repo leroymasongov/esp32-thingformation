@@ -61,5 +61,6 @@ D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/mqtt/libm
 D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/spiffs/libspiffs.a
 D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/espressif__esp_websocket_client/libespressif__esp_websocket_client.a
 D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 D:/repos3/esp-idf-work/esp32-thingformation/blink3/blink/build/esp-idf/main/libmain.a

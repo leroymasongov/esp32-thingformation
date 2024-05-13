@@ -1,8 +1,8 @@
-2024-05-02 17:09:24,668 - Debug Adapter (main) - INFO - Working directory: C:\Users\leroy\AppData\Local\Programs\Microsoft VS Code
-2024-05-02 17:09:24,668 - Debug Adapter (main) - INFO - Arguments: 
+2024-05-07 17:02:37,447 - Debug Adapter (main) - INFO - Working directory: C:\Users\leroy\AppData\Local\Programs\Microsoft VS Code
+2024-05-07 17:02:37,447 - Debug Adapter (main) - INFO - Arguments: 
 {   'app_flash_off': 65536,
     'board_type': None,
-    'cmdfile': 'd:\\repos3\\esp-idf-work\\esp32-thingformation\\blink3\\blink\\esp-idf-vscode-generated.gdb',
+    'cmdfile': None,
     'core_file': (),
     'debug': 3,
     'developer_mode': 'none',
@@ -20,34 +20,64 @@
     'postmortem': False,
     'tmo_scale_factor': 5,
     'toolchain_prefix': 'riscv32-esp-elf-'}
-2024-05-02 17:09:24,669 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STARTED
-2024-05-02 17:09:24,669 - Debug Adapter (main) - INFO - Starting. Cmd: c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter_main.py -d 3 -e d:\repos3\esp-idf-work\esp32-thingformation\blink3\blink\build\blink.elf -l d:\repos3\esp-idf-work\esp32-thingformation\blink3\blink\debug.log -p 43474 -dn esp32c6 -a 0x10000 -t riscv32-esp-elf- -x d:\repos3\esp-idf-work\esp32-thingformation\blink3\blink\esp-idf-vscode-generated.gdb -tsf 5
+2024-05-07 17:02:37,447 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STARTED
+2024-05-07 17:02:37,447 - Debug Adapter (main) - INFO - Starting. Cmd: c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter_main.py -d 3 -e d:\repos3\esp-idf-work\esp32-thingformation\blink3\blink\build\blink.elf -l d:\repos3\esp-idf-work\esp32-thingformation\blink3\blink\debug.log -p 43474 -dn esp32c6 -a 0x10000 -t riscv32-esp-elf- -tsf 5
 
-2024-05-02 17:09:24,674 - Debug Adapter (main) - INFO - Listening on port 43474
-2024-05-02 17:09:24,674 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_READY2CONNECT
-2024-05-02 17:09:24,937 - Gdb - INFO - NOTIFY: thread-group-added {'id': 'i1'}
-2024-05-02 17:09:24,969 - Gdb - INFO - CONS: ("Warning: 'set logging on', an alias for the command 'set logging enabled', "
+2024-05-07 17:02:37,464 - Debug Adapter (main) - INFO - Listening on port 43474
+2024-05-07 17:02:37,464 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_READY2CONNECT
+2024-05-07 17:02:38,012 - Gdb - INFO - NOTIFY: thread-group-added {'id': 'i1'}
+2024-05-07 17:02:38,048 - Gdb - INFO - CONS: ("Warning: 'set logging on', an alias for the command 'set logging enabled', "
  'is deprecated.\\n')
-2024-05-02 17:09:24,969 - Gdb - INFO - CONS: "Use 'set logging enabled on'.\\n\\n"
-2024-05-02 17:10:20,517 - Debug Adapter (main) - ERROR - Failed to connect to "remote 127.0.0.1:3333"!
+2024-05-07 17:02:38,048 - Gdb - INFO - CONS: "Use 'set logging enabled on'.\\n\\n"
+2024-05-07 17:02:43,729 - Gdb - INFO - NOTIFY: thread-group-started {'id': 'i1', 'pid': '42000'}
+2024-05-07 17:02:43,730 - Gdb - INFO - NOTIFY: thread-created {'group-id': 'i1', 'id': '1'}
+2024-05-07 17:02:43,730 - Gdb - INFO - CONS: '0x40017604 in ?? ()\\n'
+2024-05-07 17:02:43,730 - Gdb - INFO - NOTIFY: stopped {'frame': {'addr': '0x40017604',
+           'arch': 'riscv:rv32',
+           'args': [],
+           'func': '??'},
+ 'stopped-threads': 'all',
+ 'thread-id': '1'}
+2024-05-07 17:02:43,731 - Debug Adapter (main) - WARNING - The operation took too long! - Measured 6.267012 s ( from ~ 17:02:37,464590)
+2024-05-07 17:02:43,946 - Gdb - INFO - CONS: '[default ESP gdbinit file]'
+2024-05-07 17:02:43,946 - Gdb - INFO - NOTIFY: cmd-param-changed {'param': 'remotetimeout', 'value': '3'}
+2024-05-07 17:02:43,946 - Gdb - INFO - NOTIFY: cmd-param-changed {'param': 'remote hardware-watchpoint-limit', 'value': '2'}
+2024-05-07 17:02:43,946 - Gdb - INFO - CONS: ("Warning: 'flushregs', an alias for the command 'maintenance flush "
+ "register-cache', is deprecated.\\n")
+2024-05-07 17:02:43,947 - Gdb - INFO - CONS: "Use 'maintenance flush register-cache'.\\n\\n"
+2024-05-07 17:02:45,988 - Gdb - INFO - NOTIFY: thread-exited {'group-id': 'i1', 'id': '1'}
+2024-05-07 17:02:45,988 - Gdb - INFO - NOTIFY: thread-group-exited {'id': 'i1'}
+2024-05-07 17:02:46,112 - Gdb - INFO - NOTIFY: thread-group-started {'id': 'i1', 'pid': '42000'}
+2024-05-07 17:02:46,112 - Gdb - INFO - NOTIFY: thread-created {'group-id': 'i1', 'id': '1'}
+2024-05-07 17:02:46,112 - Gdb - INFO - CONS: '0x40000000 in ?? ()\\n'
+2024-05-07 17:02:46,112 - Gdb - INFO - NOTIFY: stopped {'frame': {'addr': '0x40000000',
+           'arch': 'riscv:rv32',
+           'args': [],
+           'func': '??'},
+ 'stopped-threads': 'all',
+ 'thread-id': '1'}
+2024-05-07 17:02:46,176 - Gdb - INFO - CONS: 'Note: automatically using hardware breakpoints for read-only addresses.\\n'
+2024-05-07 17:02:46,680 - Gdb - INFO - NOTIFY: running {'thread-id': 'all'}
+2024-05-07 17:03:36,883 - Debug Adapter (main) - ERROR - Failed to wait for target state 1! Current state 2
 Traceback (most recent call last):
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\command_processor.py", line 52, in __call__
-    on_request(protocol_message)
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\command_processor.py", line 75, in on_initialize_request
-    raise e
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\command_processor.py", line 70, in on_initialize_request
-    self.da.adapter_init()
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\debug_adapter.py", line 329, in adapter_init
-    raise e
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\debug_adapter.py", line 325, in adapter_init
-    self.start_gdb()
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\debug_adapter.py", line 678, in start_gdb
-    raise e
-  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\debug_adapter.py", line 675, in start_gdb
-    self._gdb.connect()
-  File "D:\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\esp_debug_backend\gdb.py", line 599, in connect
-    self.target_select(remote_mode, self._remote_target, tmo=tmo)
-  File "D:\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\esp_debug_backend\gdb.py", line 265, in target_select
-    raise DebuggerError('Failed to connect to "%s %s"!' % (tgt_type, tgt_params))
-esp_debug_backend.defs.DebuggerError: Failed to connect to "remote 127.0.0.1:3333"!
-2024-05-02 17:10:20,540 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STOPPED
+  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\command_processor.py", line 144, in on_launch_request
+    self.da.run(start=(not self.da.state.no_debug))
+  File "c:\Users\leroy\.vscode\extensions\espressif.esp-idf-extension-1.7.1\esp_debug_adapter\debug_adapter\debug_adapter.py", line 950, in run
+    rsn = self._gdb.wait_target_state(dbg.TARGET_STATE_STOPPED, 10)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Espressif\python_env\idf5.2_py3.11_env\Lib\site-packages\esp_debug_backend\gdb.py", line 581, in wait_target_state
+    raise DebuggerTargetStateTimeoutError("Failed to wait for target state %d! Current state %d" % (state, self._target_state))
+esp_debug_backend.defs.DebuggerTargetStateTimeoutError: Failed to wait for target state 1! Current state 2
+2024-05-07 17:03:37,423 - Gdb - INFO - CONS: '\\nProgram'
+2024-05-07 17:03:37,423 - Gdb - INFO - CONS: ' received signal SIGINT, Interrupt.\\n'
+2024-05-07 17:03:37,423 - Gdb - INFO - CONS: '0x40017604 in ?? ()\\n'
+2024-05-07 17:03:37,423 - Gdb - INFO - NOTIFY: stopped {'frame': {'addr': '0x40017604',
+           'arch': 'riscv:rv32',
+           'args': [],
+           'func': '??'},
+ 'reason': 'signal-received',
+ 'signal-meaning': 'Interrupt',
+ 'signal-name': 'SIGINT',
+ 'stopped-threads': 'all',
+ 'thread-id': '1'}
+2024-05-07 17:03:37,456 - Debug Adapter (main) - CRITICAL - Debug adapter -> Extension: DEBUG_ADAPTER_STOPPED

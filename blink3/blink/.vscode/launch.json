@@ -6,9 +6,9 @@
       "name": "Launch blink debug",
       "request": "launch",
       "debugPort": 43474,
-      "logLevel": 3,
+      "logLevel": 2,
       "mode": "auto",
-      "verifyAppBinBeforeDebug": false,
+      "verifyAppBinBeforeDebug": true,
       "tmoScaleFactor": 5,
       "env": {
         "CUSTOM_ENV_VAR": "SOME_VALUE"
