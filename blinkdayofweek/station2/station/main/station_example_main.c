@@ -11,8 +11,10 @@
 #include <math.h>
 #include <string.h>
 
-//#include <sys/time.h>
 #include <time.h>
+#include <sys/time.h>
+
+
 
 
 #include "freertos/FreeRTOS.h"
@@ -44,6 +46,10 @@
 #define EXAMPLE_ESP_WIFI_SSID      "masons2020"
 #define EXAMPLE_ESP_WIFI_PASS      "2167c91035"
 #define EXAMPLE_ESP_MAXIMUM_RETRY  CONFIG_ESP_MAXIMUM_RETRY
+
+const char* ntpServer = "pool.ntp.org";
+const long  gmtOffset_sec = 3600;
+const int   daylightOffset_sec = 3600;
 
 #if CONFIG_ESP_WPA3_SAE_PWE_HUNT_AND_PECK
 #define ESP_WIFI_SAE_MODE WPA3_SAE_PWE_HUNT_AND_PECK
@@ -156,35 +162,6 @@ const int daylightOffset_sec = 3600;
 // static clockid_t clock1;
 // static struct timespec timespec1;
 
-bool saferGetLocalTime() {
-    
-    // if (!gettimeofday(&timeinfo, NULL)) 
-
-    //if (!getLocaTime(&timeinfo))
-   // int clock_gettime(clockid_t clock_id, struct timespec *tp);
-    // int nret = clock_gettime(clock1, &timespec1);
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
-
-    // ESP_LOGI(TAG, "nret from clock_gettime = %d",nret);
-
-    ESP_LOGI(TAG, "now DoW %d", tm.tm_mday);
-           
-    // {
-    //      ESP_LOGI("Failed to obtain time %s"," ");
-    //      return false;
-    // }
-
-    // Print the time in a desired format
-    // Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
-    char buffer[30];
-
-    //strftime(buffer,30,"%m-%d-%Y  %T.",localtime(&timeinfo));
-    ESP_LOGI(TAG, "timeinfo is %s", buffer);
-
-    return true;
-
-}
 
 
 void report_by_led(int n)
@@ -195,13 +172,30 @@ void report_by_led(int n)
     // only handle successful case
     blink_led();
 
-    if ( !saferGetLocalTime() ) return;
-
+    int nDow = saferGetLocalTime();
+    
     // only success
 
-    ESP_LOGI("current date time part DOW is %s", "timeinfo.tm_wday");
+    // ESP_LOGI(TAG, "current date time part DOW is %d", nDow);
     
     return;
+}
+
+int  saferGetLocalTime()
+{
+    struct tm timeinfo;
+
+    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+
+    if(!getLocalTime(&timeinfo)){
+        ESP_LOGI(TAG,"Failed to obtain time");
+        return 0;
+    };
+
+    ESP_LOGI(TAG, "year is %d", timeinfo.tm_year);
+
+    return 1;
+
 }
 
 int wifi_init_sta(void)
@@ -295,7 +289,7 @@ int getDayOfWeek(void)
 {
         int nDow = 4;
 
-        ESP_LOGI(TAG, "Day of week %d", nDow);
+        //ESP_LOGI(TAG, "Day of week %d", nDow);
         return nDow;
 
 }
