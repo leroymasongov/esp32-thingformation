@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wifi_station",
-    "project_version":    "fab9e95-dirty",
+    "project_version":    "47a1909-dirty",
     "project_path":       "D:/repos3/esp-idf-work/esp32-thingformation/blinkdayofweek/station2/station",
     "idf_path":           "D:/ESP-IDF-Container/v5.2.1/esp-idf",
     "build_dir":          "D:/repos3/esp-idf-work/esp32-thingformation/blinkdayofweek/station2/station/build",

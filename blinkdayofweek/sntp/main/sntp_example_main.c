@@ -95,11 +95,15 @@ void app_main(void)
     ESP_LOGI(TAG, "The current date/time in New York is: %s", strftime_buf);
 
     // Set timezone to China Standard Time
-    setenv("TZ", "CST-8", 1);
+    //    setenv("TZ", "CST-8", 1);
+    // setenv("TZ", "UTC",1);
+    // setenv("TZ","UTC-10:00",1);
+    setenv("TZ","AEST-10AEDT-11,M10.1.0,M4.1.0",1);
+
     tzset();
     localtime_r(&now, &timeinfo);
     strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
-    ESP_LOGI(TAG, "The current date/time in Shanghai is: %s", strftime_buf);
+    ESP_LOGI(TAG, "The current date/time in AEST  is: %s", strftime_buf);
 
     if (sntp_get_sync_mode() == SNTP_SYNC_MODE_SMOOTH) {
         struct timeval outdelta;
@@ -112,6 +116,9 @@ void app_main(void)
             vTaskDelay(2000 / portTICK_PERIOD_MS);
         }
     }
+
+    // signal green for success in getting time
+    
 
     const int deep_sleep_sec = 10;
     ESP_LOGI(TAG, "Entering deep sleep for %d seconds", deep_sleep_sec);

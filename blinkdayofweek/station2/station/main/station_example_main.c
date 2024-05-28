@@ -155,13 +155,26 @@ static void blink_led(void)
 
 // static struct timeval timeinfo;
 
-const char* ntpServer = "pool.ntp.org";
-const long gmtOffset_sec = 36000;
-const int daylightOffset_sec = 3600;
+
 
 // static clockid_t clock1;
 // static struct timespec timespec1;
+int  saferGetLocalTime()
+{
+    struct tm timeinfo;
 
+    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+
+    if(!getLocalTime(&timeinfo)){
+        ESP_LOGI(TAG,"Failed to obtain time");
+        return 0;
+    };
+
+    ESP_LOGI(TAG, "year is %d", timeinfo.tm_year);
+
+    return 1;
+
+}
 
 
 void report_by_led(int n)
@@ -181,22 +194,7 @@ void report_by_led(int n)
     return;
 }
 
-int  saferGetLocalTime()
-{
-    struct tm timeinfo;
 
-    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
-
-    if(!getLocalTime(&timeinfo)){
-        ESP_LOGI(TAG,"Failed to obtain time");
-        return 0;
-    };
-
-    ESP_LOGI(TAG, "year is %d", timeinfo.tm_year);
-
-    return 1;
-
-}
 
 int wifi_init_sta(void)
 {
