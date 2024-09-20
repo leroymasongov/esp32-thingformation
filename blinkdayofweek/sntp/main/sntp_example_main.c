@@ -20,6 +20,24 @@
 #include "lwip/ip_addr.h"
 #include "esp_sntp.h"
 
+#include "driver/gpio.h"
+
+#define LED_GPIO 2
+
+void initialize_led() {
+    gpio_pad_select_gpio(LED_GPIO);
+    gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
+}
+
+void set_led_high() {
+    gpio_set_level(LED_GPIO, 1);
+}
+
+void set_led_low() {
+    gpio_set_level(LED_GPIO, 0);
+}
+
+
 static const char *TAG = "example";
 
 #ifndef INET6_ADDRSTRLEN
@@ -48,6 +66,24 @@ void time_sync_notification_cb(struct timeval *tv)
     ESP_LOGI(TAG, "Notification of a time synchronization event");
 }
 
+initialize_led();
+
+// wait for time to be set
+time_t now = 0;
+struct tm timeinfo = { 0 };
+int retry = 0;
+const int retry_count = 15;
+while (esp_netif_sntp_sync_wait(2000 / portTICK_PERIOD_MS) == ESP_ERR_TIMEOUT && ++retry < retry_count) {
+    ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry, retry_count);
+}
+set_led_high(); // Turn on LED when time is synchronized
+
+time(&now);
+localtime_r(&now, &timeinfo);
+
+ESP_ERROR_CHECK( example_disconnect() );
+esp_netif_sntp_deinit();
+
 void app_main(void)
 {
     ++boot_count;
@@ -61,6 +97,8 @@ void app_main(void)
     if (timeinfo.tm_year < (2016 - 1900)) {
         ESP_LOGI(TAG, "Time is not set yet. Connecting to WiFi and getting time over NTP.");
         obtain_time();
+        // set led greeeneeeen!
+        
         // update 'now' variable with current time
         time(&now);
     }
@@ -118,7 +156,7 @@ void app_main(void)
     }
 
     // signal green for success in getting time
-    
+
 
     const int deep_sleep_sec = 10;
     ESP_LOGI(TAG, "Entering deep sleep for %d seconds", deep_sleep_sec);

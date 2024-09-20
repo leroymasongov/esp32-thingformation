@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Windows-10.0.26212")
+set(CMAKE_HOST_SYSTEM "Windows-10.0.26257")
 set(CMAKE_HOST_SYSTEM_NAME "Windows")
-set(CMAKE_HOST_SYSTEM_VERSION "10.0.26212")
+set(CMAKE_HOST_SYSTEM_VERSION "10.0.26257")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
 include("D:/ESP-IDF-Container/v5.2.1/esp-idf/tools/cmake/toolchain-esp32c6.cmake")

@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "sntp",
-    "project_version":    "47a1909-dirty",
+    "project_version":    "74dfbdc-dirty",
     "project_path":       "D:/repos3/esp-idf-work/esp32-thingformation/blinkdayofweek/sntp",
     "idf_path":           "D:/ESP-IDF-Container/v5.2.1/esp-idf",
     "build_dir":          "D:/repos3/esp-idf-work/esp32-thingformation/blinkdayofweek/sntp/build",

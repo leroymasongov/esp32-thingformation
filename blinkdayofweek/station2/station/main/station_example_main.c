@@ -185,7 +185,7 @@ void report_by_led(int n)
     // only handle successful case
     blink_led();
 
-    int nDow = saferGetLocalTime();
+   // int nDow = saferGetLocalTime();
     
     // only success
 
