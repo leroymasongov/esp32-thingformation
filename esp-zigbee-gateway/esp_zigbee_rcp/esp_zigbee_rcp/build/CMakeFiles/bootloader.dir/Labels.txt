@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/CMakeFiles/bootloader
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/CMakeFiles/bootloader.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/CMakeFiles/bootloader-complete.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/repos3/esp-idf-work/esp32-thingformation/esp-zigbee-gateway/esp_zigbee_rcp/esp_zigbee_rcp/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
